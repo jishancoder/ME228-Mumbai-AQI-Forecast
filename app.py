@@ -5,7 +5,7 @@ import joblib
 
 # ── PAGE CONFIG ──
 st.set_page_config(
-    page_title="Mumbai AQI Forecasting System",
+    page_title="Mumbai AQI Estimation System",
     page_icon="🌫️",
     layout="wide"
 )
@@ -39,7 +39,7 @@ def get_alert(aqi):
         return 'Severe', '#2c3e50', 'HEALTH EMERGENCY — Entire population likely to be affected.', 'Do NOT go outside. Seal windows. Seek medical attention if experiencing symptoms.'
 
 # ── HEADER ──
-st.title('🌫️ Mumbai AQI Forecasting & Alert System')
+st.title('🌫️ Mumbai AQI Estimation & Alert System')
 st.markdown('**ME228 Course Project** | Prakrati · Snehal · Prashil · Jishan | IIT Bombay')
 st.markdown('---')
 
@@ -138,7 +138,7 @@ if predict_btn:
 
     # ── OUTPUT ──
     st.markdown('---')
-    st.header('🎯 Prediction Results')
+    st.header('🎯 Estimation Results')
 
     r1, r2, r3 = st.columns(3)
 
@@ -147,7 +147,7 @@ if predict_btn:
         <div style='background-color:{color};padding:30px;border-radius:12px;text-align:center;'>
             <h1 style='color:white;margin:0;font-size:64px;'>{predicted_aqi:.0f}</h1>
             <h2 style='color:white;margin:0;'>{category}</h2>
-            <p style='color:white;margin:0;font-size:14px;'>Predicted AQI</p>
+            <p style='color:white;margin:0;font-size:14px;'>Estimated AQI</p>
         </div>
         """, unsafe_allow_html=True)
 
@@ -191,11 +191,11 @@ if predict_btn:
         """, unsafe_allow_html=True)
 
 else:
-    st.info('👆 Fill in the conditions above and click PREDICT AQI to get the forecast.')
+    st.info('👆 Fill in the conditions above and click PREDICT AQI to get the estimation.')
 
 # ── FOOTER ──
 st.markdown('---')
 st.markdown(
-    '<p style="text-align:center;color:gray;font-size:12px;">ME228 | IIT Bombay | Mumbai AQI Forecasting Project | 2026</p>',
+    '<p style="text-align:center;color:gray;font-size:12px;">ME228 | IIT Bombay | Mumbai AQI Estimation Project | 2026</p>',
     unsafe_allow_html=True
 )
